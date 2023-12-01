@@ -14,6 +14,8 @@ https://github.com/hannoeru/vite-plugin-pages
   pnpm install pino
 ```
 
+https://github.com/testing-library/jest-dom#with-vitest
+
 <!-- # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
