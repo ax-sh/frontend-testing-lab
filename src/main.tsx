@@ -6,7 +6,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import logger from "./logger.ts";
 
-logger.info("Hello, world!");
+const log = logger.child({ module: "[main]" });
+
+log.info("Main module loaded.");
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
