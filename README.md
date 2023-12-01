@@ -16,6 +16,13 @@ https://github.com/hannoeru/vite-plugin-pages
 
 https://github.com/testing-library/jest-dom#with-vitest
 
+https://mswjs.io/docs/basics/intercepting-requests
+
+https://fakerjs.dev/guide/
+```shell
+  pnpm add @faker-js/faker --save-dev
+```
+
 <!-- # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
