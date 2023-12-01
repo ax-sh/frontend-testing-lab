@@ -4,7 +4,7 @@ import App from "./App.tsx";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import "./index.css";
-import logger from "./logger.ts";
+import logger from "./utils/logger.ts";
 
 const log = logger.child({ module: "[main]" });
 
