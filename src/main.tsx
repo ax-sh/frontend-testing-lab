@@ -4,6 +4,9 @@ import App from "./App.tsx";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import "./index.css";
+import logger from "./logger.ts";
+
+logger.info("Hello, world!");
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
