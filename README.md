@@ -1,7 +1,14 @@
 https://vitejs.dev/guide/
 https://tailwindcss.com/docs/guides/vite
 
-`npx tailwindcss init --ts`
+`pnpx tailwindcss init --ts`
+
+https://github.com/hannoeru/vite-plugin-pages
+
+```sh
+  pnpm install -D vite-plugin-pages
+  pnpm install react-router react-router-dom
+```
 
 <!-- # React + TypeScript + Vite
 
