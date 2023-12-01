@@ -21,7 +21,10 @@ https://mswjs.io/docs/basics/intercepting-requests
 https://fakerjs.dev/guide/
 ```shell
   pnpm add @faker-js/faker --save-dev
+  
 ```
+
+https://fakerjs.dev/api/
 
 <!-- # React + TypeScript + Vite
 
