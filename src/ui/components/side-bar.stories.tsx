@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SideBar from "./side-bar";
-
 import {
   reactRouterParameters,
   withRouter,
 } from "storybook-addon-react-router-v6";
+
+import SideBar from "./side-bar";
 
 const meta: Meta<typeof SideBar> = {
   title: "User Profile",

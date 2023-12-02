@@ -1,5 +1,5 @@
-import Layout from "../ui/layouts";
 import { Main } from "../ui/components";
+import Layout from "../ui/layouts";
 
 export default function IndexPage() {
   return (
