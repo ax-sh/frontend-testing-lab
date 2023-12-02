@@ -1,8 +1,8 @@
 import type { Preview } from "@storybook/react";
-import { initialize, mswLoader, mswDecorator } from "msw-storybook-addon";
-import type { Decorator } from "@storybook/react";
+import { initialize, mswLoader } from "msw-storybook-addon";
+import { themes } from "@storybook/theming";
 import "../src/global.css";
-import { QueryClient, setLogger, QueryClientProvider } from "react-query";
+import { setLogger } from "react-query";
 
 // Disable `react-query` error logging
 setLogger({
@@ -20,6 +20,9 @@ export const loaders = [mswLoader];
 const preview: Preview = {
   loaders: [mswLoader],
   parameters: {
+    // docs: {
+    //   theme: themes.dark,
+    // },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {

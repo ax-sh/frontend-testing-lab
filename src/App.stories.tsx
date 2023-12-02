@@ -25,6 +25,7 @@ const meta: Meta<typeof Comp> = {
       </QueryClientProvider>
     ),
   ],
+  tags: ["autodocs"],
   component: Comp,
   render: () => <Comp />,
 };

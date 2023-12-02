@@ -1,7 +1,8 @@
 import { faker } from "@faker-js/faker";
 import axios from "axios";
-import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
+
+import { http, HttpResponse } from "msw";
 
 const server = setupServer(
   http.get("/api", () =>
