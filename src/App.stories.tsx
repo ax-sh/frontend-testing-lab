@@ -24,9 +24,9 @@ const meta: Meta<typeof Comp> = {
 export default meta;
 type Story = StoryObj<typeof Comp>;
 
-export const Primary: Story = {
-  render: () => <Comp />,
-};
+// export const Primary: Story = {
+//   render: () => <Comp />,
+// };
 
 // export const Loading: Story = {
 //   render: () => <Comp />,
