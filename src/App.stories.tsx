@@ -48,7 +48,7 @@ Loading.parameters = {
   msw: {
     handlers: [
       http.get("https://jsonplaceholder.typicode.com/posts", async () => {
-        await delay("infinite");
+        // await delay("infinite");
         HttpResponse.json();
       }),
     ],
@@ -62,7 +62,10 @@ export const Data: Story = {
       handlers: [
         http.get<PathParams, DefaultBodyType, Post[]>(
           "https://jsonplaceholder.typicode.com/posts",
-          async () => HttpResponse.json(posts),
+          async () => {
+            console.log(88899900);
+            return HttpResponse.json(posts);
+          },
         ),
       ],
     },
