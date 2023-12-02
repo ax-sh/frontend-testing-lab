@@ -4,7 +4,10 @@
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 PROTECTED_BRANCHES="^(master|develop)"
 
-npx --no -- commitlint --edit $1
+if [[ $1 != *"$BRANCH"* ]]
+then
+  echo -e "\n🚫 You must use (git push origin $BRANCH) / Anda harus menggunakan (git push origin $BRANCH).\n" && exit 1
+fi
 
 pnpm git-branch-is --not develop
   exit 1
