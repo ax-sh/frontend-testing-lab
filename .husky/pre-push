@@ -15,7 +15,3 @@ then
 fi
 
 echo -e ">> Finish checking branch name\n==="
-
-
-pnpm git-branch-is --not develop
-  exit 1
