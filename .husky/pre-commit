@@ -13,7 +13,7 @@ fi
 #fi
 
 pnpm git-branch-is --not master
-pnpm git-branch-is --not develop
+pnpm git-branch-is --not develop && echo "🚫"
 
 
 pnpm test run

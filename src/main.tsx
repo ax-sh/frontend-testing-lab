@@ -12,7 +12,6 @@ const log = logger.child({ module: "[main]" });
 
 log.info("Main module loaded.");
 
-// Create a client
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
