@@ -4,10 +4,10 @@ import { initialize, mswLoader } from 'msw-storybook-addon';
 import '../src/index.css'
 
 // todo fix this probably caused by msw 2 update
-// initialize();
+initialize();
 
 const preview: Preview = {
-  // loaders: [mswLoader],
+  loaders: [mswLoader],
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
