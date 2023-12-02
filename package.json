@@ -54,6 +54,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
     "eslint-plugin-storybook": "^0.6.15",
+    "git-branch-is": "^4.0.0",
     "happy-dom": "^12.10.3",
     "husky": "^8.0.3",
     "msw": "^2.0.9",
