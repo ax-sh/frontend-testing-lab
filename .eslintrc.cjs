@@ -21,6 +21,9 @@ module.exports = {
         // Style imports.
         ["^.+\\.?(css)$"],
 ["^clsx"],
+          ["^msw$"],
+          ["^react-query"],
+
           ["^react-icons(/.*|$)"]
 
       ]
