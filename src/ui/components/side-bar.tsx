@@ -6,7 +6,6 @@ export default function SideBar() {
       <h6>Private</h6>
       <ul>
         <li>
-          {" "}
           <FaBeer />
         </li>
       </ul>
