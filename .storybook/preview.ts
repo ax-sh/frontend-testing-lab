@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
-import { initialize, mswLoader } from 'msw-storybook-addon';
+import { initialize, mswLoader } from "msw-storybook-addon";
 
-import '../src/index.css'
+import "../src/global.css";
 
 // todo fix this probably caused by msw 2 update
 initialize();
