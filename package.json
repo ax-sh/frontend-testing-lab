@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "axios": "^1.6.2",
+    "clsx": "^2.0.0",
     "pino": "^8.16.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -53,6 +54,7 @@
     "eslint": "^8.53.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-storybook": "^0.6.15",
     "git-branch-is": "^4.0.0",
     "happy-dom": "^12.10.3",
@@ -64,6 +66,7 @@
     "prettier": "^3.1.0",
     "storybook": "7.6.3",
     "storybook-addon-pseudo-states": "^2.1.2",
+    "storybook-addon-react-router-v6": "^2.0.10",
     "tailwindcss": "^3.3.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",

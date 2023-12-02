@@ -1,7 +1,7 @@
-import type { Config } from "tailwindcss";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import typography from "@tailwindcss/typography";
+import type { Config } from "tailwindcss";
 
 export default {
   content: [
