@@ -5,15 +5,23 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import "./index.css";
 import logger from "./utils/logger.ts";
+import { ReactQueryDevtools } from 'react-query/devtools'
+import {QueryClient, QueryClientProvider} from "react-query";
 
 const log = logger.child({ module: "[main]" });
 
 log.info("Main module loaded.");
 
+// Create a client
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+      <QueryClientProvider client={queryClient}>
     <Router>
       <App />
     </Router>
+          <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
   </React.StrictMode>
 );
