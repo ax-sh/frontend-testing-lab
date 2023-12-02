@@ -28,17 +28,30 @@ export const Primary: Story = {
   render: () => <Comp />,
 };
 
-export const Loading: Story = {
-  render: () => <Comp />,
-  parameters: {
-    msw: {
-      handlers: [
-        http.get("https://jsonplaceholder.typicode.com/posts", async () => {
-          await delay("infinite");
-          HttpResponse.json();
-        }),
-      ],
-    },
+// export const Loading: Story = {
+//   render: () => <Comp />,
+//   // parameters: {
+//   //   msw: {
+//   //     handlers: [
+//   //       http.get("https://jsonplaceholder.typicode.com/posts", async () => {
+//   //         await delay("infinite");
+//   //         HttpResponse.json();
+//   //       }),
+//   //     ],
+//   //   },
+//   // },
+// };
+
+export const Loading: Story = () => <Comp />;
+
+Loading.parameters = {
+  msw: {
+    handlers: [
+      http.get("https://jsonplaceholder.typicode.com/posts", async () => {
+        await delay("infinite");
+        HttpResponse.json();
+      }),
+    ],
   },
 };
 

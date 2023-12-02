@@ -3,7 +3,9 @@ import { initialize, mswLoader } from "msw-storybook-addon";
 
 import "../src/global.css";
 
-initialize();
+initialize({
+  onUnhandledRequest: "bypass",
+});
 
 const preview: Preview = {
   loaders: [mswLoader],
