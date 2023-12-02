@@ -1,0 +1,3 @@
+
+ignores: ["depcheck","eslint", "babel-*","@storybook/*" ,"storybook-addon-pseudo-states", "prettier", "autoprefixer", "postcss"]
+skip-missing: true
