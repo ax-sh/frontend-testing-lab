@@ -8,13 +8,21 @@ import { DefaultBodyType, delay, http, HttpResponse, PathParams } from "msw";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
-const queryClient = new QueryClient();
+const mockedQueryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
 
 const meta: Meta<typeof Comp> = {
-  title: " Profile",
+  title: "Api Request states",
   decorators: [
     (Story) => (
-      <QueryClientProvider client={queryClient}>{Story()}</QueryClientProvider>
+      <QueryClientProvider client={mockedQueryClient}>
+        {Story()}
+      </QueryClientProvider>
     ),
   ],
   component: Comp,
@@ -24,32 +32,18 @@ const meta: Meta<typeof Comp> = {
 export default meta;
 type Story = StoryObj<typeof Comp>;
 
-// export const Primary: Story = {
-//   render: () => <Comp />,
-// };
-
-// export const Loading: Story = {
-//   render: () => <Comp />,
-//   // parameters: {
-//   //   msw: {
-//   //     handlers: [
-//   //       http.get("https://jsonplaceholder.typicode.com/posts", async () => {
-//   //         await delay("infinite");
-//   //         HttpResponse.json();
-//   //       }),
-//   //     ],
-//   //   },
-//   // },
-// };
-
-export const Loading: Story = () => <Comp />;
+export const Loading: Story = () => (
+  <QueryClientProvider client={new QueryClient()}>
+    <Comp />
+  </QueryClientProvider>
+);
 
 Loading.parameters = {
   msw: {
     handlers: [
       http.get("https://jsonplaceholder.typicode.com/posts", async () => {
-        // await delay("infinite");
-        HttpResponse.json();
+        await delay("infinite");
+        // HttpResponse.json();
       }),
     ],
   },
