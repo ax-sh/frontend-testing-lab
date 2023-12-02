@@ -14,6 +14,6 @@ fi
 
 pnpm git-branch-is --not master
 pnpm git-branch-is --not develop && echo "🚫"
-
+pnpm git-branch-is --not develop && echo "🚫" && exit 1
 
 pnpm test run
