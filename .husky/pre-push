@@ -6,7 +6,7 @@ PROTECTED_BRANCHES="^(master|develop)"
 
 if [[ $1 != *"$BRANCH"* ]]
 then
-  echo -e "\n🚫 You must use (git push origin $BRANCH) .\n" && exit 1
+  echo -e "\n\n🚫 You must use (git push origin $BRANCH) .\n\n" && exit 1
 fi
 
 pnpm git-branch-is --not develop
