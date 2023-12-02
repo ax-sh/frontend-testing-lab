@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import  typography from '@tailwindcss/typography'
+import typography from "@tailwindcss/typography";
 
 export default {
   content: [
@@ -10,5 +11,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [ typography,],
+  plugins: [typography],
 } satisfies Config;

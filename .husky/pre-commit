@@ -11,10 +11,13 @@ fi
 #  echo "You can't commit directly to master branch"
 #  exit 1
 #fi
-pnpm git-branch-is develop && echo "[🚫 NOT ALLOWED TO COMMIT ON $branch]" && exit 1
-pnpm git-branch-is --not master
-pnpm git-branch-is --not develop
+#pnpm git-branch-is develop && echo "[🚫 NOT ALLOWED TO COMMIT ON $branch]" && exit 1
+#pnpm git-branch-is --not master
+#pnpm git-branch-is --not develop
 
-
-
+echo "[checking depcheck]"
+pnpm depcheck
+echo "[linting]"
+pnpm lint
+echo "[running tests]"
 pnpm test run
