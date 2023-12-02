@@ -3,7 +3,6 @@ import { initialize, mswLoader } from "msw-storybook-addon";
 
 import "../src/global.css";
 
-// todo fix this probably caused by msw 2 update
 initialize();
 
 const preview: Preview = {
