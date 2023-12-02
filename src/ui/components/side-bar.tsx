@@ -1,3 +1,5 @@
 export default function SideBar(){
-    return <aside></aside>
+    return <aside className={'prose lg:prose-xl'}>
+        <h1>Private</h1>
+    </aside>
 }
