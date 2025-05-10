@@ -18,8 +18,11 @@ const testLinterRules = {
   ],
   ...testingLibrary.configs["flat/react"],
   rules: {
-    'testing-library/prefer-screen-queries': 'off',
-    'testing-library/no-node-access': ['warn', { allowContainerFirstChild: true }],
+    "testing-library/prefer-screen-queries": "off",
+    "testing-library/no-node-access": [
+      "warn",
+      { allowContainerFirstChild: true },
+    ],
   },
 };
 

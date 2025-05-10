@@ -12,7 +12,7 @@ export function ErrorBoundaryImpl({
   onClick,
   disabled,
 }: ComponentProps<"button">) {
-  const [trigger, setTrigger] = useState<boolean>(false);
+  const [trigger, setTrigger] = useState<boolean>(disabled!);
 
   const handleClick = useCallback(
     (e: MouseEvent<HTMLButtonElement>) => {
@@ -23,16 +23,17 @@ export function ErrorBoundaryImpl({
     },
     [onClick],
   );
-  if (disabled) {
+
+  if (trigger) {
     return (
       <ExtendedErrorBoundary>
-        <TestBroker forceCrash={false} />
+        <TestBroker forceCrash={trigger} />
       </ExtendedErrorBoundary>
     );
   }
   return (
     <ExtendedErrorBoundary>
-      <TestBroker forceCrash={trigger} />
+      {trigger && <TestBroker forceCrash={trigger} />}
       <TestFillScreen>
         <TestButton onClick={handleClick}>Click me {children}</TestButton>
       </TestFillScreen>
