@@ -1,13 +1,13 @@
 import clsx from "clsx";
+import type { ComponentProps, PropsWithChildren } from "react";
 
 export function TestButton({
   children,
   className,
   ...props
-}: ComponentProps<"button">) {
+}: Readonly<ComponentProps<"button">>) {
   return (
     <button
-      onClick={handleClick}
       className={clsx(
         "bg-blue hover:bg-green",
         "px-4 py-2",
@@ -22,7 +22,7 @@ export function TestButton({
   );
 }
 
-export function TestFillScreen({ children }: PropsWithChildern) {
+export function TestFillScreen({ children }: Readonly<PropsWithChildren>) {
   return (
     <article
       className={clsx(
@@ -36,7 +36,7 @@ export function TestFillScreen({ children }: PropsWithChildern) {
   );
 }
 
-export function TestBroker({ forceCrash }: { forceCrash: boolean }) {
+export function TestBroker({ forceCrash }: Readonly<{ forceCrash: boolean }>) {
   if (forceCrash) {
     throw new Error("Broke it");
   }

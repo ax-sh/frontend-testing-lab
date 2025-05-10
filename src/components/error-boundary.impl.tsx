@@ -5,20 +5,20 @@ import {
   useState,
 } from "react";
 import { ExtendedErrorBoundary } from "./error-boundary.tsx";
-import { TestBroker, TestFillScreen ,TestButton} from "./test-ui.tsx";
+import { TestBroker, TestButton, TestFillScreen } from "./test-ui.tsx";
 
 export function ErrorBoundaryImpl({
   children,
   onClick,
   disabled,
 }: ComponentProps<"button">) {
-  const [trigger, setTrigger] = useState<boolean>();
+  const [trigger, setTrigger] = useState<boolean>(false);
 
   const handleClick = useCallback(
     (e: MouseEvent<HTMLButtonElement>) => {
       if (onClick) {
         setTrigger(true);
-        onClick();
+        onClick(e);
       }
     },
     [onClick],
@@ -32,7 +32,7 @@ export function ErrorBoundaryImpl({
   }
   return (
     <ExtendedErrorBoundary>
-        <TestBroker forceCrash={trigger} />
+      <TestBroker forceCrash={trigger} />
       <TestFillScreen>
         <TestButton onClick={handleClick}>Click me {children}</TestButton>
       </TestFillScreen>
