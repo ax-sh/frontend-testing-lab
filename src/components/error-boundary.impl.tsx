@@ -15,8 +15,8 @@ export function ErrorBoundaryImpl({
   children,
   onClick,
   disabled,
-  bac,
-}: ComponentProps<"button">) {
+  backgroundColor,
+}: ComponentProps<"button"> & { backgroundColor?: string }) {
   const [trigger, setTrigger] = useState<boolean>(disabled ?? false);
 
   const handleClick = useCallback(
@@ -31,9 +31,11 @@ export function ErrorBoundaryImpl({
 
   if (trigger) {
     return (
-      <ExtendedErrorBoundary>
-        <TestBroker forceCrash={trigger} />
-      </ExtendedErrorBoundary>
+      <div className={"h-screen w-screen"} style={{ backgroundColor }}>
+        <ExtendedErrorBoundary>
+          <TestBroker forceCrash={trigger} />
+        </ExtendedErrorBoundary>
+      </div>
     );
   }
   return (
