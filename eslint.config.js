@@ -17,6 +17,9 @@ const testLinterRules = {
     "**/?(*.)+(spec|test).[jt]s?(x)",
   ],
   ...testingLibrary.configs["flat/react"],
+  rules: {
+    'testing-library/prefer-screen-queries': 'off',
+  },
 };
 
 /** @type {import("eslint").Config} */
