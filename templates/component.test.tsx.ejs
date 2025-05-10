@@ -10,6 +10,7 @@ import { use{{pascalCase targetDestinationFileName}}Hook } from './{{kebabCase t
 describe("{{pascalCase targetDestinationFileName}} test", () => {
     it("should test component {{pascalCase targetDestinationFileName}}", async () => {
         render(<{{pascalCase targetDestinationFileName}} className="color-green" />);
+        screen.debug();
 
         await userEvent.click(screen.getByText('Load Greeting'))
         await screen.findByRole('heading')

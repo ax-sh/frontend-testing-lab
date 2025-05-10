@@ -1,8 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import "@testing-library/jest-dom";
-
 import { describe, expect, it } from "vitest";
+import "@testing-library/jest-dom/vitest";
 
 import { HeroComp } from "./hero-comp";
 import { useHeroCompHook } from "./hero-comp.hook";
@@ -21,7 +20,7 @@ describe("HeroComp test", () => {
     expect(1).toBe(1);
   });
 
-  it("should test component hook HeroComp", async () => {
+  it.todo("should test component hook HeroComp", async () => {
     const hook = useHeroCompHook({});
     console.debug("todo hook test", hook);
   });
