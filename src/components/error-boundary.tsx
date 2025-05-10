@@ -5,7 +5,7 @@ import { ErrorBoundary } from "react-error-boundary";
 function TryAgainButton({ onClick }: ComponentProps<"button">) {
   return (
     <button
-      className="inline-flex items-center gap-2 rounded-md bg-gray-700 px-3 py-1.5 text-sm leading-6 text-white font-semibold shadow-inner shadow-white/10 cursor-pointer hover:bg-gray-600"
+      className="text-sm text-white font-semibold leading-6 px-3 py-1.5 rounded-md bg-gray-700 inline-flex gap-2 cursor-pointer shadow-inner shadow-white/10 items-center hover:bg-gray-600"
       type="button"
       onClick={onClick}
     >
@@ -20,7 +20,7 @@ function AppErrorFallback({
 }: Readonly<FallbackProps>) {
   return (
     <article role="alert" className="grid h-full w-full place-items-center">
-      <div className="flex flex-col gap-2 rounded-sm bg-red-400 p-4 m-4 text-white">
+      <div className="text-white m-4 p-4 rounded-sm bg-red-400 flex flex-col gap-2">
         <p>Something went wrong:</p>
         <pre>{error.message}</pre>
         <div>
