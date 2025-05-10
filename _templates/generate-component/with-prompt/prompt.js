@@ -3,8 +3,8 @@
 //
 export default [
   {
-    type: 'input',
-    name: 'message',
-    message: "What's your message?"
-  }
-]
+    type: "input",
+    name: "message",
+    message: "What's your message?",
+  },
+];
