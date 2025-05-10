@@ -15,6 +15,7 @@ export function ErrorBoundaryImpl({
   children,
   onClick,
   disabled,
+  bac,
 }: ComponentProps<"button">) {
   const [trigger, setTrigger] = useState<boolean>(disabled ?? false);
 

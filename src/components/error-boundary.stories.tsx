@@ -29,7 +29,8 @@ export const ErrorActive: Story = {
 
 export const ErrorOnClick: Story = {
   args: {
-    // ...ErrorActive.args,
+    ...ErrorActive.args,
+    disabled: false,
     onClick: fn(() => {
       console.log("onClick ErrorOnClick");
     }),
