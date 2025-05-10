@@ -1,0 +1,9 @@
+import clsx from 'clsx'
+
+type {{pascalCase targetDestinationFileName}}Props = {
+  className?: ""
+}
+export function {{pascalCase targetDestinationFileName}}({className, ...props}:{{pascalCase targetDestinationFileName}}Props) {
+  console.debug(props)
+  return <div className={clsx("bg-red-500", className)}>Test {{pascalCase targetDestinationFileName}}</div>
+}

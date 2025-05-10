@@ -1,0 +1,14 @@
+import { render, screen } from "@testing-library/react";
+import userEvent from '@testing-library/user-event'
+import '@testing-library/jest-dom'
+
+import { describe, expect, it } from "vitest";
+
+import { {{pascalCase targetDestinationFileName}} } from './{{kebabCase targetDestinationFileName}}'
+
+describe("{{pascalCase targetDestinationFileName}} test", () => {
+    it("should run {{pascalCase targetDestinationFileName}}", async () => {
+        render(<{{pascalCase targetDestinationFileName}} />);
+        expect(1).toBe(1);
+    });
+});
