@@ -11,7 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "format:check": "biome check . && eslint .",
-    "format": "biome check --apply-unsafe . && eslint --fix .",
+    "format": "biome check --unsafe . && eslint --fix .",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "clean": "rimraf coverage dist storybook-static",
