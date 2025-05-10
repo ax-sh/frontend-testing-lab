@@ -5,9 +5,10 @@ import '@testing-library/jest-dom'
 import { describe, expect, it } from "vitest";
 
 import { {{pascalCase targetDestinationFileName}} } from './{{kebabCase targetDestinationFileName}}'
+import { use{{pascalCase targetDestinationFileName}}Hook } from './{{kebabCase targetDestinationFileName}}.hook'
 
 describe("{{pascalCase targetDestinationFileName}} test", () => {
-    it("should run {{pascalCase targetDestinationFileName}}", async () => {
+    it("should test component {{pascalCase targetDestinationFileName}}", async () => {
         render(<{{pascalCase targetDestinationFileName}} className="color-green" />);
 
         await userEvent.click(screen.getByText('Load Greeting'))
@@ -18,5 +19,9 @@ describe("{{pascalCase targetDestinationFileName}} test", () => {
         expect(screen.getByRole('button')).toBeDisabled()
 
         expect(1).toBe(1);
+    });
+
+    it("should test component hook {{pascalCase targetDestinationFileName}}", async () => {
+        const hook = use{{pascalCase targetDestinationFileName}}Hook({})
     });
 });

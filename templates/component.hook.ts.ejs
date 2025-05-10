@@ -1,0 +1,15 @@
+import type { ComponentRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+
+export type {{pascalCase targetDestinationFileName}}HookProps = Record<string, string>
+
+export function use{{pascalCase targetDestinationFileName}}Hook({ ...props}: {{pascalCase targetDestinationFileName}}HookProps) {
+  const ref = useRef<ComponentRef<"div">>(null);
+  const [state, setState] = useState({})
+  useLayoutEffect(()=>{
+      const TAG = "{{pascalCase targetDestinationFileName}}"
+      console.debug("Mounted hook", TAG)
+  },[])
+  console.debug("rerender Mounted hook", state, props);
+  return { ref, state, setState };
+}

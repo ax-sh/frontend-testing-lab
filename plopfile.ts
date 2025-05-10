@@ -15,20 +15,25 @@ export default function (plop: NodePlopAPI) {
     type: "add",
     path: `${wd}/src/ui/{{kebabCase targetDestinationFileName}}/{{kebabCase targetDestinationFileName}}.test.tsx`,
     skipIfExists: true,
-    // templateFile: "templates/component.stories.tsx.ejs",
     templateFile: "templates/component.test.tsx.ejs",
   };
   const plopComponentAction: ActionType = {
     type: "add",
     path: `${wd}/src/ui/{{kebabCase targetDestinationFileName}}/{{kebabCase targetDestinationFileName}}.tsx`,
     skipIfExists: true,
-    // templateFile: "templates/component.stories.tsx.ejs",
     templateFile: "templates/component.tsx.ejs",
+  };
+  const plopComponentHookAction: ActionType = {
+    type: "add",
+    path: `${wd}/src/ui/{{kebabCase targetDestinationFileName}}/{{kebabCase targetDestinationFileName}}.hook.ts`,
+    skipIfExists: true,
+    templateFile: "templates/component.hook.ts.ejs",
   };
   const actions: ActionType[] = [
     plopStorybookAction,
     plopComponentTestAction,
     plopComponentAction,
+    plopComponentHookAction
   ];
   const config: Partial<PlopGeneratorConfig> = {
     description: "Generate a new React component with TypeScript",
