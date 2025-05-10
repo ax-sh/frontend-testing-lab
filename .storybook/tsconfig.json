@@ -1,7 +1,12 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "types": ["vite/client", "vitest", "@storybook/react", "@storybook/addon-actions"],
+    "types": [
+      "vite/client",
+      "vitest",
+      "@storybook/react",
+      "@storybook/addon-actions"
+    ],
     "jsx": "react-jsx"
   },
   "include": ["../src", "../.storybook"]
