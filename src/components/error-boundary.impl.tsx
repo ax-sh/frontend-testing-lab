@@ -4,15 +4,19 @@ import {
   useCallback,
   useState,
 } from "react";
+import {
+  TestBroker,
+  TestButton,
+  TestFillScreen,
+} from "../../.storybook/test-helpers/test-ui.tsx";
 import { ExtendedErrorBoundary } from "./error-boundary.tsx";
-import { TestBroker, TestButton, TestFillScreen } from "./test-ui.tsx";
 
 export function ErrorBoundaryImpl({
   children,
   onClick,
   disabled,
 }: ComponentProps<"button">) {
-  const [trigger, setTrigger] = useState<boolean>(disabled!);
+  const [trigger, setTrigger] = useState<boolean>(disabled ?? false);
 
   const handleClick = useCallback(
     (e: MouseEvent<HTMLButtonElement>) => {

@@ -1,5 +1,8 @@
 import type { ComponentProps, PropsWithChildren } from "react";
-import type { FallbackProps } from "react-error-boundary";
+import type {
+  ErrorBoundaryPropsWithComponent,
+  FallbackProps,
+} from "react-error-boundary";
 import { ErrorBoundary } from "react-error-boundary";
 
 function TryAgainButton({ onClick }: ComponentProps<"button">) {
@@ -32,7 +35,7 @@ function AppErrorFallback({
 }
 
 type ExtendedErrorBoundaryProps = PropsWithChildren<{
-  FallbackComponentProp?: any;
+  FallbackComponentProp?: ErrorBoundaryPropsWithComponent["FallbackComponent"];
 }>;
 
 export function ExtendedErrorBoundary({
@@ -41,7 +44,7 @@ export function ExtendedErrorBoundary({
 }: Readonly<ExtendedErrorBoundaryProps>) {
   return (
     <ErrorBoundary
-      FallbackComponent={FallbackComponentProp ?? AppErrorFallback}
+      FallbackComponent={FallbackComponentProp || AppErrorFallback}
       onReset={(details) => {
         console.warn("ExtendedErrorBoundary onReset=>", details);
         // Reset the state of your app so the error doesn't happen again

@@ -10,8 +10,12 @@ import "virtual:uno.css";
 
 import "./index.scss";
 import App from "./App.tsx";
+const rootElement = document.getElementById("root");
+if (!rootElement) {
+  throw new Error("Root element not found");
+}
 
-createRoot(document.getElementById("root")!).render(
+createRoot(rootElement).render(
   <StrictMode>
     <App />
   </StrictMode>,
