@@ -13,7 +13,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "storybook:test": "pnpm test-storybook",
-    "preinstall": "npx only-allow pnpm",
+    "preinstall": "bunx only-allow bun",
     "prepare": "husky install"
   },
   "dependencies": {
