@@ -33,7 +33,7 @@ export default function (plop: NodePlopAPI) {
     plopStorybookAction,
     plopComponentTestAction,
     plopComponentAction,
-    plopComponentHookAction
+    plopComponentHookAction,
   ];
   const config: Partial<PlopGeneratorConfig> = {
     description: "Generate a new React component with TypeScript",
