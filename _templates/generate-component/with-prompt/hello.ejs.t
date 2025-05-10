@@ -1,5 +1,5 @@
 ---
-to: app/hello.ts
+to: app/<%= destinationFileName %>.test.ts
 ---
 const hello = `
 Hello!

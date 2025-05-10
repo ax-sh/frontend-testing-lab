@@ -4,7 +4,7 @@
 export default [
   {
     type: "input",
-    name: "message",
-    message: "What's your message?",
+    name: "destinationFileName",
+    message: "destinationFileName for the component?",
   },
 ];
