@@ -1,15 +1,14 @@
 import type { PlopGeneratorConfig } from "node-plop";
 import type { ActionType, NodePlopAPI } from "plop";
 
-
 const wd = ".";
 export default function (plop: NodePlopAPI) {
   const plopStorybookAction: ActionType = {
     type: "add",
     path: `${wd}/src/ui/{{kebabCase targetDestinationFileName}}/{{kebabCase targetDestinationFileName}}.stories.tsx`,
     skipIfExists: false,
-    // templateFile: "templates/component.stories.tsx.hbs",
-    templateFile: "templates/component.stories.tsx.hbs",
+    // templateFile: "templates/component.stories.tsx.ejs",
+    templateFile: "templates/component.stories.tsx.ejs",
   };
   const actions: ActionType[] = [plopStorybookAction];
   const config: Partial<PlopGeneratorConfig> = {
