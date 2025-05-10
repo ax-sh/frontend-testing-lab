@@ -1,33 +1,33 @@
 import {
-	defineConfig,
-	presetAttributify,
-	presetIcons,
-	presetTypography,
-	presetWebFonts,
-	presetWind4,
-	transformerDirectives,
-	transformerVariantGroup,
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetTypography,
+  presetWebFonts,
+  presetWind4,
+  transformerDirectives,
+  transformerVariantGroup,
 } from "unocss";
 
 export default defineConfig({
-	shortcuts: [
-		// ...
-	],
-	theme: {
-		colors: {
-			// ...
-		},
-	},
-	presets: [
-		presetWind4({ preflight: { reset: true } }),
-		presetAttributify(),
-		presetIcons(),
-		presetTypography(),
-		presetWebFonts({
-			fonts: {
-				// ...
-			},
-		}),
-	],
-	transformers: [transformerDirectives(), transformerVariantGroup()],
+  shortcuts: [
+    // ...
+  ],
+  theme: {
+    colors: {
+      // ...
+    },
+  },
+  presets: [
+    presetWind4({ preflight: { reset: true } }),
+    presetAttributify(),
+    presetIcons(),
+    presetTypography(),
+    presetWebFonts({
+      fonts: {
+        // ...
+      },
+    }),
+  ],
+  transformers: [transformerDirectives(), transformerVariantGroup()],
 });
