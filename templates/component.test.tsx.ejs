@@ -8,7 +8,15 @@ import { {{pascalCase targetDestinationFileName}} } from './{{kebabCase targetDe
 
 describe("{{pascalCase targetDestinationFileName}} test", () => {
     it("should run {{pascalCase targetDestinationFileName}}", async () => {
-        render(<{{pascalCase targetDestinationFileName}} />);
+        render(<{{pascalCase targetDestinationFileName}} className="color-green" />);
+
+        await userEvent.click(screen.getByText('Load Greeting'))
+        await screen.findByRole('heading')
+
+        // ASSERT
+        expect(screen.getByRole('heading')).toHaveTextContent('hello there')
+        expect(screen.getByRole('button')).toBeDisabled()
+
         expect(1).toBe(1);
     });
 });

@@ -1,9 +1,24 @@
 import clsx from 'clsx'
+import type { ComponentProps } from "react";
+import { useState, useLayoutEffect, useState } from "react";
 
-type {{pascalCase targetDestinationFileName}}Props = {
-  className?: ""
+
+export type {{pascalCase targetDestinationFileName}}Props = Pick<ComponentProps<"div">, "className"> & {};
+
+export type {{pascalCase targetDestinationFileName}}HookProps = {}
+
+export function use{{pascalCase targetDestinationFileName}}Hook({className, ...props}: {{pascalCase targetDestinationFileName}}HookProps) {
+  const ref = useRef()
+  const [state, setState] = useState({})
+  useLayoutEffect(()=>{
+      const TAG = "{{pascalCase targetDestinationFileName}}"
+      console.debug("Mounted hook", TAG)
+  },[])
+  return ref
 }
-export function {{pascalCase targetDestinationFileName}}({className, ...props}:{{pascalCase targetDestinationFileName}}Props) {
+
+export function {{pascalCase targetDestinationFileName}}({className, ...props}: {{pascalCase targetDestinationFileName}}Props) {
+  const ref = use{{pascalCase targetDestinationFileName}}Hook()
   console.debug(props)
-  return <div className={clsx("bg-red-500", className)}>Test {{pascalCase targetDestinationFileName}}</div>
+  return <div ref={ref} className={clsx("bg-red-500", className)}>Test {{pascalCase targetDestinationFileName}}</div>
 }
