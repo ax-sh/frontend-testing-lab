@@ -5,11 +5,22 @@ import biome from "eslint-config-biome";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import storybook from "eslint-plugin-storybook";
+import testingLibrary from "eslint-plugin-testing-library";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 /** @type {import("eslint").Config} */
-const customFlatLinters = [
+const testLinterRules = {
+  files: [
+    /* glob matching your test files */
+    "**/__tests__/**/*.[jt]s?(x)",
+    "**/?(*.)+(spec|test).[jt]s?(x)",
+  ],
+  ...testingLibrary.configs["flat/react"],
+};
+
+/** @type {import("eslint").Config} */
+const customExtendedFlatLinters = [
   { ignores: ["public"] },
   biome,
   unocss,
@@ -36,6 +47,7 @@ const customFlatLinters = [
       "@tanstack/query/exhaustive-deps": "error",
     },
   },
+  testLinterRules,
 ];
 
 export default tseslint.config(
@@ -59,5 +71,5 @@ export default tseslint.config(
       ],
     },
   },
-  ...customFlatLinters,
+  ...customExtendedFlatLinters,
 );

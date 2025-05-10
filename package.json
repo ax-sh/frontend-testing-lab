@@ -20,7 +20,9 @@
     "react-dom": "^19.1.0",
     "react-dropzone": "^14.3.8",
     "react-error-boundary": "^6.0.0",
-    "sass": "^1.87.0"
+    "react-hook-form": "^7.56.3",
+    "sass": "^1.87.0",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3",
@@ -46,6 +48,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "eslint-plugin-storybook": "^0.12.0",
+    "eslint-plugin-testing-library": "^7.1.1",
     "globals": "^16.0.0",
     "msw-storybook-addon": "^2.0.4",
     "playwright": "^1.52.0",
