@@ -1,31 +1,43 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import clsx from "clsx";
-import type { ComponentProps } from "react";
+import {
+  type ComponentProps,
+  type MouseEvent,
+  useCallback,
+  useState,
+} from "react";
 import { ExtendedErrorBoundary } from "./error-boundary.tsx";
+import { TestBroker, TestFillScreen } from "./test-ui.tsx";
 
-function ErrorBoundaryImpl({ onClick, children }: ComponentProps<"button">) {
+function ErrorBoundaryImpl({
+  children,
+  onClick,
+  disabled,
+}: ComponentProps<"button">) {
+  const [trigger, setTrigger] = useState<boolean>();
+
+  const handleClick = useCallback(
+    (e: MouseEvent<HTMLButtonElement>) => {
+      console.log(333);
+      if (onClick) {
+        setTrigger(true);
+        onClick();
+      }
+    },
+    [onClick],
+  );
+  if (disabled || trigger) {
+    return (
+      <ExtendedErrorBoundary>
+        <TestBroker />
+      </ExtendedErrorBoundary>
+    );
+  }
   return (
     <ExtendedErrorBoundary>
-      <article
-        className={clsx(
-          "h-screen w-screen",
-          "bg-black text-white",
-          "grid place-items-center",
-        )}
-      >
-        <button
-          onClick={onClick}
-          className={clsx(
-            "bg-blue hover:bg-green",
-            "px-4 py-2",
-            "cursor-pointer",
-            "rounded-sm",
-          )}
-        >
-          Click me {children}
-        </button>
-      </article>
+      <TestFillScreen>
+        <TestButton onClick={handleClick}>Click me {children}</TestButton>
+      </TestFillScreen>
     </ExtendedErrorBoundary>
   );
 }
@@ -41,16 +53,29 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Idle: Story = {
   args: {
-    onClick: fn(() => "dff"),
+    onClick: fn(),
     children: "Button",
   },
 };
 
-export const Error: Story = {
+export const ErrorActive: Story = {
   args: {
-    onClick: fn(),
+    onClick: fn(() => {
+      console.log("onClick Error");
+    }),
+    disabled: true,
+    children: "Error Button",
+  },
+};
+
+export const ErrorOnClick: Story = {
+  args: {
+    onClick: fn(() => {
+      console.log("onClick ErrorOnClick");
+    }),
+
     children: "Error Button",
   },
 };
