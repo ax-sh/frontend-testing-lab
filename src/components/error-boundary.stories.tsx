@@ -1,46 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import {
-  type ComponentProps,
-  type MouseEvent,
-  useCallback,
-  useState,
-} from "react";
-import { ExtendedErrorBoundary } from "./error-boundary.tsx";
-import { TestBroker, TestFillScreen } from "./test-ui.tsx";
-
-function ErrorBoundaryImpl({
-  children,
-  onClick,
-  disabled,
-}: ComponentProps<"button">) {
-  const [trigger, setTrigger] = useState<boolean>();
-
-  const handleClick = useCallback(
-    (e: MouseEvent<HTMLButtonElement>) => {
-      console.log(333);
-      if (onClick) {
-        setTrigger(true);
-        onClick();
-      }
-    },
-    [onClick],
-  );
-  if (disabled || trigger) {
-    return (
-      <ExtendedErrorBoundary>
-        <TestBroker />
-      </ExtendedErrorBoundary>
-    );
-  }
-  return (
-    <ExtendedErrorBoundary>
-      <TestFillScreen>
-        <TestButton onClick={handleClick}>Click me {children}</TestButton>
-      </TestFillScreen>
-    </ExtendedErrorBoundary>
-  );
-}
+import { ErrorBoundaryImpl } from "./error-boundary.impl.tsx";
 
 const meta = {
   title: "UI/ErrorBoundary",
