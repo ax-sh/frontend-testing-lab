@@ -25,6 +25,15 @@ const customFlatLinters = [
 			"storybook/default-exports": "off",
 		},
 	},
+	...pluginQuery.configs["flat/recommended"],
+	{
+		plugins: {
+			"@tanstack/query": pluginQuery,
+		},
+		rules: {
+			"@tanstack/query/exhaustive-deps": "error",
+		},
+	},
 ];
 
 export default tseslint.config(

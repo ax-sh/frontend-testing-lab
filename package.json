@@ -14,14 +14,15 @@
 		"format": "biome check --apply-unsafe . && eslint --fix ."
 	},
 	"dependencies": {
+		"@tanstack/react-query": "^5.75.7",
 		"clsx": "^2.1.1",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
+		"react-dropzone": "^14.3.8",
+		"react-error-boundary": "^6.0.0",
 		"sass": "^1.87.0"
 	},
 	"devDependencies": {
-		"@types/bun": "^1.2.12",
-		"@types/node": "^22.15.17",
 		"@chromatic-com/storybook": "^3",
 		"@eslint/js": "^9.25.0",
 		"@storybook/addon-essentials": "^8.6.12",
@@ -31,6 +32,9 @@
 		"@storybook/react": "^8.6.12",
 		"@storybook/react-vite": "^8.6.12",
 		"@storybook/test": "^8.6.12",
+		"@tanstack/eslint-plugin-query": "^5.74.7",
+		"@types/bun": "^1.2.12",
+		"@types/node": "^22.15.17",
 		"@types/react": "^19.1.2",
 		"@types/react-dom": "^19.1.2",
 		"@unocss/eslint-config": "^66.1.1",
@@ -43,6 +47,7 @@
 		"eslint-plugin-react-refresh": "^0.4.19",
 		"eslint-plugin-storybook": "^0.12.0",
 		"globals": "^16.0.0",
+		"msw-storybook-addon": "^2.0.4",
 		"playwright": "^1.52.0",
 		"storybook": "^8.6.12",
 		"typescript": "~5.8.3",
@@ -53,5 +58,8 @@
 	},
 	"eslintConfig": {
 		"extends": ["plugin:storybook/recommended"]
+	},
+	"msw": {
+		"workerDirectory": ["public"]
 	}
 }
