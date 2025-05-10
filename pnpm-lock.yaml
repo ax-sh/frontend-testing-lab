@@ -49,8 +49,8 @@ importers:
         specifier: 7.6.3
         version: 7.6.3(react@18.2.0)
       '@storybook/addon-onboarding':
-        specifier: 1.0.9
-        version: 1.0.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 1.0.11
+        version: 1.0.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@storybook/addon-outline':
         specifier: ^7.6.3
         version: 7.6.3
@@ -1693,8 +1693,8 @@ packages:
   '@storybook/addon-measure@7.6.3':
     resolution: {integrity: sha512-DqxADof04ktA5GSA8XnckYGdVYyC4oN8vfKSGcPzpcKrJ2uVr0BXbcyJAEcJAshEJimmpA6nH5TxabXDFBZgPQ==}
 
-  '@storybook/addon-onboarding@1.0.9':
-    resolution: {integrity: sha512-HlHm05Py18XOf4g7abiWkvb2WteoHcRNk1PY3Wtsmjuu5aAAjBmp4mVEg59xEeA2HAMICZ2fb72NIpFlBvDN+g==}
+  '@storybook/addon-onboarding@1.0.11':
+    resolution: {integrity: sha512-0Sa7PJDsM6AANOWZX7vq3kgCbS9AZFjr3tfr3bLGfXviwIBKjoZDDdIErJkS3D4mNcDa78lYQvp3PTCKwLIJ9A==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -7026,7 +7026,7 @@ snapshots:
       '@storybook/global': 5.0.0
       tiny-invariant: 1.3.1
 
-  '@storybook/addon-onboarding@1.0.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@storybook/addon-onboarding@1.0.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@storybook/telemetry': 7.6.3
       react: 18.2.0
