@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from "react";
 import type { FallbackProps } from "react-error-boundary";
 import { ErrorBoundary } from "react-error-boundary";
+
 function AppErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   return (
     <article role="alert" className="canvas-error-alert-dialog">
